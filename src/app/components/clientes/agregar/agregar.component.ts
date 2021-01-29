@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 
+// custom validators
+import { CustomValidators } from './../../../utils/customValidators';
+
 // services
 import { ServicesClientesService } from 'src/app/services/services-clientes.service';
 
@@ -17,8 +20,8 @@ export class AgregarComponent implements OnInit {
   createFormGroup() {
     return new FormGroup({
       id: new FormControl('', [Validators.required]),
-      nombre: new FormControl('', [Validators.required]),
-      apellidos: new FormControl('', [Validators.required])
+      nombre: new FormControl('', [Validators.required, CustomValidators.allText]),
+      apellidos: new FormControl('', [Validators.required, CustomValidators.allText])
     })
   }
 

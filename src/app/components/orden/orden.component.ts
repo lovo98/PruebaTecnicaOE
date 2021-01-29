@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+// custom validators
+import { CustomValidators } from './../../utils/customValidators';
+
 // services
 import { ServicesClientesService } from 'src/app/services/services-clientes.service';
 import { OrdenService } from './../../services/orden.service';

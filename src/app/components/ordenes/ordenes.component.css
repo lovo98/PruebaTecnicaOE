@@ -20,3 +20,7 @@
   margin-top: 20px;
   box-shadow:0 0 6px 0 rgba(72, 140, 172, 0.37);
 }
+
+.over-x {
+  overflow: auto;
+}

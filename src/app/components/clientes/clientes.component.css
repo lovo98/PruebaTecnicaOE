@@ -31,3 +31,7 @@
 .message-alert {
   padding: 3px;
 }
+
+.over-x {
+  overflow: auto;
+}

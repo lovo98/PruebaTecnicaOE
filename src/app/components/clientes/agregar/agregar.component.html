@@ -15,8 +15,11 @@
         <label> Nombres: </label>
         <input type="text" class="form-control" formControlName="nombre" placeholder="Nombres">
         <div class="alerta-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched || inputErr)">
-          <div class="message-alert">
+          <div class="message-alert" *ngIf="nombre.errors.required">
             Este campo es requerido.
+          </div>
+          <div class="message-alert" *ngIf="nombre.errors.onlyText">
+            Solo se permiten letras.
           </div>
         </div>
       </div>
@@ -24,18 +27,21 @@
         <label> Apellidos: </label>
         <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
         <div class="alerta-danger" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched || inputErr)">
-          <div class="message-alert">
+          <div class="message-alert" *ngIf="apellidos.errors.required">
             Este campo es requerido.
+          </div>
+          <div class="message-alert" *ngIf="apellidos.errors.onlyText">
+            Solo se permiten letras.
           </div>
         </div>
       </div>
     </div>
-    <div *ngIf="!load; else loading" class="mt-4">
-      <button class="btn btn-info btn-block" type="submit">Enviar</button>
+    <div *ngIf="!load; else loading" class="mt-4 content-btn">
+      <button class="btn btn-info save-w100" type="submit">Enviar</button>
     </div>
     <ng-template #loading>
       <div class="mt-4">
-        <button class="btn btn-info btn-block disabled" type="button"><i class="fas fa-spinner fa-spin"></i></button>
+        <button class="btn btn-info save-w100 disabled" type="button"><i class="fas fa-spinner fa-spin"></i></button>
       </div>
     </ng-template>
   </form>

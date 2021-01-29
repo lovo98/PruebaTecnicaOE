@@ -6,16 +6,27 @@
   color: #721c24;
   background: #f8d7da;
   border-color: #f5c6cb;
-  margin-bottom: 5px;
+  margin: 2px 0px 5px 0px;
 }
 
 .message-alert {
   padding: 3px;
 }
 
+.content-btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 @media screen and (max-width: 700px) {
   .frmBody {
     display: flex;
     flex-direction: column;
+  }
+
+  .save-w100 {
+    width: 100%;
   }
 }
