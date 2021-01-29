@@ -1,0 +1,6 @@
+.detalle-contenedor {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: wrap;
+}

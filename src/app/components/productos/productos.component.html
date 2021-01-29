@@ -1,0 +1,53 @@
+<div class="container contenedor">
+  <h3 class="title">Listado de productos <i class="fas fa-dolly"></i></h3>
+  <div class="container">
+    <div *ngIf="listado.length > 0; else noData">
+      <div class="addBtn">
+        <a class="btn btn-primary" [routerLink]="['/mi-tienda/productos/agregar']"
+          routerLinkActive="router-link-active">Nuevo <i class="fas fa-plus"></i></a>
+      </div>
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of listado">
+            <th scope="row">{{ data.id }}</th>
+            <td>{{ data.nombre }}</td>
+            <td>{{ data.descripcion }}</td>
+            <td>{{ data.precio }}</td>
+            <td>
+              <a class="btn btn-outline-info btn-sm" data-toggle="tooltip" data-placement="top" title="Ver detalles"
+              (click)="verDetalles('/mi-tienda/productos/mostrar', data.id)">
+                <i class="fas fa-eye"></i>
+              </a>&nbsp;
+              <a class="btn btn-outline-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Eliminar"
+              (click)="eliminar(data.id)">
+                <i class="fas fa-trash"></i>
+              </a>
+              &nbsp;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noData>
+      <div class="jumbotron">
+        <h1 class="display-4">No hay registros</h1>
+        <hr class="my-4">
+        <p>Agregue un nuevo registro.</p>
+        <p class="lead">
+          <a class="btn btn-primary" [routerLink]="['/mi-tienda/productos/agregar']"
+          routerLinkActive="router-link-active">Agregar</a>
+        </p>
+      </div>
+    </ng-template>
+  </div>
+</div>
+

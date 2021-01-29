@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <h3 class="titulo">Nuevo producto <i class="fas fa-dolly"></i></h3>
+  <form [formGroup]="formProductos" (ngSubmit)="agregarProducto()">
+    <div class="row frmBody">
+      <div class="col">
+        <label> Identificador: </label>
+        <input type="text" class="form-control" formControlName="id" placeholder="Identificador">
+        <div class="alerta-danger" *ngIf="id.invalid && (id.dirty || id.touched || errorInput)">
+          <div class="message-alert">
+            Este campo es requerido.
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <label> Nombre: </label>
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+        <div class="alerta-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched || errorInput)">
+          <div class="message-alert">
+            Este campo es requerido.
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <label> Descripción: </label>
+        <input type="text" class="form-control" formControlName="descripcion" placeholder="Descripción">
+        <div class="alerta-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched || errorInput)">
+          <div class="message-alert">
+            Este campo es requerido.
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <label> Precio: </label>
+        <input type="text" class="form-control" formControlName="precio" placeholder="Precio">
+        <div class="alerta-danger" *ngIf="precio.invalid && (precio.dirty || precio.touched || errorInput)">
+          <div class="message-alert">
+            Este campo es requerido.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4" *ngIf="!load; else loading">
+      <input class="btn btn-info btn-block" type="submit" value="Enviar">
+    </div>
+    <ng-template #loading>
+      <div class="mt-4">
+        <button class="btn btn-info btn-block" type="button"><i class="fas fa-spinner fa-spin"></i></button>
+      </div>
+    </ng-template>
+  </form>
+</div>

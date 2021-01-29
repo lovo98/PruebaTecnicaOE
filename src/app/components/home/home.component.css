@@ -1,0 +1,20 @@
+.contenedor {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.card {
+  width: 350px !important;
+  text-align: center;
+  box-shadow:0 0 6px 0 rgba(0, 0, 0, .5);
+  margin: 10px;
+}
+
+.card:hover {
+  display: inline-block;
+  margin: 0 0.5rem;
+  animation: pulse;
+  animation-duration: 2s;
+}

@@ -1,0 +1,43 @@
+<div class="container contenedor">
+  <h3 class="title"> Ordenes <i class="fas fa-cart-plus"></i></h3>
+  <div class="container">
+    <div *ngIf="ordenList.length > 0; else noData">
+      <div class="addBtn">
+        <a class="btn btn-primary" [routerLink]="['/mi-tienda/crear-orden']"
+          routerLinkActive="router-link-active">Nuevo <i class="fas fa-plus"></i></a>
+      </div>
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let clientes of ordenList">
+            <td>{{ clientes.id }}</td>
+            <td>{{ clientes.idCliente }}</td>
+            <td>{{ clientes.idProducto }}</td>
+            <td>{{ clientes.cantidad }}</td>
+            <td>{{ clientes.fecha }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noData>
+      <div class="jumbotron">
+        <h1 class="display-4">No hay registros</h1>
+        <hr class="my-4">
+        <p>Agregue un nuevo registro.</p>
+        <p class="lead">
+          <a class="btn btn-primary" [routerLink]="['/mi-tienda/crear-orden']"
+          routerLinkActive="router-link-active">Agregar</a>
+        </p>
+      </div>
+    </ng-template>
+  </div>
+</div>
+

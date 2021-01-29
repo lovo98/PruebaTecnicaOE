@@ -1,0 +1,22 @@
+<div class="container">
+  <div *ngIf="data; else noData">
+    <div *ngFor="let datos of data" class="card mt-4">
+      <div class="card-header">
+        Detalles del producto
+      </div>
+      <div class="card-body detalle-contenedor">
+        <span class="card-text"><b>Identificador:</b> {{datos.id}}</span>
+        <span class="card-text"> <b>Nombre:</b> {{datos.nombre}}</span>
+        <span class="card-text"> <b>Descripción:</b> {{datos.descripcion}}</span>
+        <span class="card-text"> <b>Precio:</b> {{datos.precio}}</span>
+      </div>
+    </div>
+  </div>
+  <ng-template #noData>
+    <div class="card mt-4">
+      <div class="card-body detalle-contenedor">
+        <span class="card-text">No se encontraron detalles del producto seleccionado</span>
+      </div>
+    </div>
+  </ng-template>
+</div>

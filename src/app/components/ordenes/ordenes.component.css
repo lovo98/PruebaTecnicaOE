@@ -1,0 +1,22 @@
+.title {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.addBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.addBtn > a {
+  width: 100px;
+}
+
+.contenedor {
+  border: 1px solid #cccccc;
+  border-radius: 1%;
+  margin-top: 20px;
+  box-shadow:0 0 6px 0 rgba(72, 140, 172, 0.37);
+}

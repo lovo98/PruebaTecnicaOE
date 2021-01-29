@@ -1,0 +1,21 @@
+.titulo {
+  text-align: center;
+}
+
+.alerta-danger {
+  color: #721c24;
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  margin-bottom: 5px;
+}
+
+.message-alert {
+  padding: 3px;
+}
+
+@media screen and (max-width: 700px) {
+  .frmBody {
+    display: flex;
+    flex-direction: column;
+  }
+}
